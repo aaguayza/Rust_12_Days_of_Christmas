@@ -6,13 +6,28 @@
 //the inner loop will have to loop a certian amount of times based on the counter which will then count up through the array.  
 
 
-const ALL_DAYS: [&str; 7] = ["first", "second", "third", "fourth", "fifth", "sixth", "seventh"];
-fn on_the_day(day:&str){
-    print!("\nOn the {day} day of Christmas, my true love gave to me\n");
-}
+const ALL_DAYS: [&str; 12] = ["first", "second", "third", "fourth", "fifth", "sixth", "seventh", "eighth", "ninth", "tenth", "eleventh", "twelveth"];
+const ALL_GIFTS: [&str; 12]= ["A partridge in a pear tree",
+    "Two turtle doves and",
+    "Three French hens",
+    "Four calling birds",
+    "Five golden rings",
+    "Six geese a-laying",
+    "Seven swans a-swimming",
+    "Eight maids a-milking",
+    "Nine ladies dancing",
+    "Ten lords a-leaping",
+    "Eleven pipers piping",
+    "Twelve drummers drumming",
+    ];
 
 fn main() {
+    let mut counter = 0;
     for i in ALL_DAYS{
-        on_the_day(i)
+        print!("\nOn the {} day of Christmas\nMy true love gave to me\n", i);
+        counter += 1;
+        for number in (0..counter).rev(){
+            print!("{}\n", ALL_GIFTS[number]);
+        }
     }
 }
